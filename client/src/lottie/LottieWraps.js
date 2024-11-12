@@ -8,6 +8,7 @@ import rouletteRaw from './raw/lottie-roulette.json';
 import notFoundRaw from './raw/lottie-404.json';
 import celebrateRaw from './raw/lottie-celebrate.json';
 import cookieRaw from './raw/lottie-cookie.json'
+
 /*
 Home
 */

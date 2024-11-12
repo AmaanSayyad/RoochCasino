@@ -3,19 +3,15 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import React, { useRef, useState } from "react";
 
 function Icosahedron({ radius = 3, detail = 0, speed = 0.7, ...props }) {
-  // This reference will give us direct access to the mesh
   const meshRef = useRef();
-  // Set up state for the hovered and active state
   const [hovered, setHover] = useState(false);
-  // Subscribe this component to the render-loop, rotate the mesh every frame
   useFrame((state, delta) => (meshRef.current.rotation.x += delta * speed));
-  // Return view, these are regular three.js elements expressed in JSX
   return (
     <mesh
       {...props}
       ref={meshRef}
-      onPointerOver={(event) => setHover(true)}
-      onPointerOut={(event) => setHover(false)}
+      onPointerOver={() => setHover(true)}
+      onPointerOut={() => setHover(false)}
     >
       <icosahedronGeometry args={[radius, detail]} />
       <meshPhysicalMaterial
@@ -30,66 +26,84 @@ function Icosahedron({ radius = 3, detail = 0, speed = 0.7, ...props }) {
 export default function FeatureSection() {
   return (
     <section id="feature" className="py-14 px-[126px] relative">
-      <Canvas style={{ position: 'absolute', width: 'min(550px, 65%)', bottom: 60, height: 300, zIndex: 1 }}>
+      {/* 3D Animation */}
+      <Canvas
+        style={{
+          position: "absolute",
+          width: "min(550px, 65%)",
+          bottom: 60,
+          height: 300,
+          zIndex: 1,
+        }}
+      >
         <ambientLight intensity={Math.PI / 5} />
-        <spotLight
-          position={[-7, 0, 12]}
-          angle={0.35}
-          penumbra={1}
-          decay={0}
-          intensity={1.2}
-        />
-        <camera aspect={16 / 10} />
+        <spotLight position={[-7, 0, 12]} angle={0.35} penumbra={1} decay={0} intensity={1.2} />
         <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
-        <Icosahedron
-          position={[-1.5, -1, -1]}
-          rotation={[0, 3, 3.2]}
-          radius={4}
-        />
-        <Icosahedron
-          position={[2, -1.5, 2]}
-          rotation={[0, -3.2, 3]}
-          scale={0.5}
-          speed={1.2}
-        />
+        <Icosahedron position={[-1.5, -1, -1]} rotation={[0, 3, 3.2]} radius={4} />
+        <Icosahedron position={[2, -1.5, 2]} rotation={[0, -3.2, 3]} scale={0.5} speed={1.2} />
       </Canvas>
-      <h1 className="font-display text-[32px] leading-[40px] text-center text-white">Features of APT-Casino</h1>
-      <div className="grid-cols-2 grid py-11 px-20 gap-[60px] mt-14 bg-ruby rounded-3xl z-10 relative" >
+
+      {/* Section Header */}
+      <h1 className="font-display text-[32px] leading-[40px] text-center text-white">
+        Key Features of RoochCasino
+      </h1>
+
+      {/* Features Grid */}
+      <div className="grid grid-cols-2 py-11 px-20 gap-12 mt-14 bg-ruby rounded-3xl z-10 relative">
+        {/* First Column */}
         <div id="first-col">
-          <div className="">
-            <h2 className="text-dark-kiss text-sm font-semibold">Key features</h2>
-            <h1 className="text-white my-5 text-[32px] leading-[40px] font-bold">Traditional vs APT-Casino
-
-            </h1>
-            <p className="text-white/[0.6] font-medium">Traditional online casinos often lack transparency, and players have to trust the platform's integrity without any verifiable proof of fairness. Issues like rigged games, hidden terms like bonus wager limits, and withdrawal restrictions are common, causing players to lose trust. APT-Casino leverages Aptos blockchain technology to solve these problems by providing transparent and provably fair gaming experiences.
-</p>
-          </div>
+          <h2 className="text-dark-kiss text-sm font-semibold">Overview</h2>
+          <h1 className="text-white my-5 text-[32px] leading-[40px] font-bold">
+            Traditional Casinos vs RoochCasino
+          </h1>
+          <p className="text-white/[0.6] font-medium leading-relaxed">
+            Traditional online casinos often lack transparency, leaving players
+            to trust platforms without proof of fairness. Common issues include
+            rigged games, hidden terms, and restrictive policies. RoochCasino
+            leverages Rooch blockchain to provide a transparent, provably fair
+            gaming experience. Key features include:
+          </p>
+          <ul className="list-disc pl-6 text-white/[0.6] mt-4 font-medium">
+            <li>Community Leaderboard: Compete and view top players' achievements.</li>
+            <li>Profile Exploration: Explore player profiles, activities, and ENS.</li>
+          </ul>
         </div>
-        <div id="second-col" className="flex flex-col gap-5">
-          <div className="border-t border-b border-[#E504983D] p-5 flex flex-col gap-3 inner-purple-shadow rounded-xl">
-            <h2 className="text-dark-kiss text-sm font-semibold">Transparent and Fair Gaming
-</h2>
-            <p className="text-white">Provably Fair Gameplay: Utilizing Aptos fully on-chain randomness module, APT-Casino ensures that all game outcomes are transparent and verifiably fair, giving players confidence in the integrity of the games.
 
-</p>
-          </div>
-          <div className="border-t border-b border-[#E504983D] p-5 flex flex-col gap-3 inner-purple-shadow rounded-xl">
-            <h2 className="text-dark-kiss text-sm font-semibold">Enhanced Security
-</h2>
-            <p className="text-white">
-Security is highly prioritized for newcomers in web3 gambling. APT-Casino utilizes robust security features of Aptos & Okto's wallet infrastructure to protect user assets from unauthorized access. 
-</p>
-          </div>
-          <div className="border-t border-b border-[#E504983D] p-5 flex flex-col gap-3 inner-purple-shadow rounded-xl">
+        {/* Second Column */}
+        <div id="second-col" className="flex flex-col gap-6">
+          {/* Feature Cards */}
+          <div className="border border-[#E504983D] p-5 flex flex-col gap-3 inner-purple-shadow rounded-xl">
             <h2 className="text-dark-kiss text-sm font-semibold">
+              Transparent and Fully On-Chain GambleFi
+            </h2>
+            <p className="text-white">
+              RoochCasino ensures transparency with fully on-chain randomness
+              using our Aptos module, guaranteeing verifiably fair outcomes for
+              every game.
+            </p>
+          </div>
 
-Seamless Cross-Chain Integration
+          <div className="border border-[#E504983D] p-5 flex flex-col gap-3 inner-purple-shadow rounded-xl">
+            <h2 className="text-dark-kiss text-sm font-semibold">DeFi Integration</h2>
+            <p className="text-white">
+              Cross-chain lending enables token deposits on supported chains as
+              collateral to borrow APTC (in-game currecny token), ensuring seamless gameplay without selling assets.
+            </p>
+            <ul className="list-disc pl-6 text-white mt-2">
+              <li>Real-time asset prices for accurate lending calculations.</li>
+              <li>Effortless cross-chain asset transfers.</li>
+            </ul>
+          </div>
 
-</h2>
-            <p className="text-white">Managing assets across different blockchains is often hectic at user side. APT-Casino addresses this by offering seamless cross-chain integration, allowing players to transfer and manage assets between Aptos and other supported networks effortlessly using Pedra and Okto.</p>
+          <div className="border border-[#E504983D] p-5 flex flex-col gap-3 inner-purple-shadow rounded-xl">
+            <h2 className="text-dark-kiss text-sm font-semibold">No Traps, No Restrictions</h2>
+            <p className="text-white">
+              Enjoy flexible withdrawal policies, transparent bonus schemes, and full control
+              over your assets through decentralized asset management.
+            </p>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

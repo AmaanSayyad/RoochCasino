@@ -18,12 +18,12 @@ export default function HeroSection() {
         
         </h1>
         <span className="bg-clip-text mt-4 font-bold text-8xl text-transparent bg-gradient-to-r from-red-magic to-blue-magic">
-            APT-CASINO
+            RoochCasino
           </span>
         <h2 className="text-[#B3B3B3] mt-4 text-2xl">
-        Dive into the next generation of gaming with APT-Casino where every move is 
+        Dive into the next generation of gaming with RoochCasino where every move is 
 
-          <br /> powered by APTOS blockchain technology. Discover new games, connect with friends, and 
+          <br /> powered by Rooch blockchain technology. Discover new games, connect with friends, and 
 unlock endless possibilities.
         </h2>
         <div className="flex gap-8 mt-10">

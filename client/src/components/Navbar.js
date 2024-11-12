@@ -35,9 +35,9 @@ export default function Navbar() {
   return (
     <nav className="bg-[#070005] fixed w-full z-20">
       <div className="flex w-full items-center justify-between py-6 px-8">
-        <a href="/" className="font-mono text-3xl  " style={{letterSpacing:"6px"}}>
-        <span className="bg-clip-text text-transparent uppercase font-extrabold bg-gradient-to-r from-red-magic to-blue-magic">
-            APT-Casino
+        <a href="/" className="font-mono text-3xl  " style={{letterSpacing:"4px"}}>
+        <span className="bg-clip-text text-transparent font-extrabold bg-gradient-to-r from-red-magic to-blue-magic">
+            RoochCasino
           </span>
         </a>
 

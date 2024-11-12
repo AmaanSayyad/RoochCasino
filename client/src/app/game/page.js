@@ -1,5 +1,6 @@
 "use client";
-
+import FeatureGameSection from "@/components/FeatureGameSection";
+import Footer from '@/components/Footer'
 import HeaderText from "@/components/HeaderText";
 import Navbar from "@/components/Navbar";
 import GameCarousel from "@/components/GameCarousel";
@@ -14,6 +15,7 @@ import axios from "axios";
 const baseUrl = 'YOUR_BASE_URL'; // Replace with your base URL
 const clientApiKey = 'YOUR_CLIENT_API_KEY';
 const authToken = 'AUTH_TOKEN';
+
 
 export default function Page() {
   const { account, signAndSubmitTransaction } = useWallet();
@@ -45,6 +47,7 @@ export default function Page() {
         <GameCarousel />
         <MostPlayed />
         <LetsPlaySection />
+        <Footer />
       </div>
     </>
   );

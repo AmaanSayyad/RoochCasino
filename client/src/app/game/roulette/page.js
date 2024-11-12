@@ -17,6 +17,8 @@ import Navbar from "@/components/Navbar";
 import { useWallet } from "@aptos-labs/wallet-adapter-react";
 import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
 import toast, { Toaster } from 'react-hot-toast';
+import Footer from '@/components/Footer'
+
 const TooltipWide = styled(({ className, ...props }) => (
   <Tooltip {...props} classes={{ popper: className }} />
 ))({
@@ -950,7 +952,7 @@ export default function GameRoulette() {
               ) : (
                 <Typography color="text.secondary" className="mt-3">
                   Total Balance :
-                  <span className="font-bold text-blue-500"> 8.99 APT</span>
+                  <span className="font-bold text-blue-500"> 4 APTC</span>
                 </Typography>
               )}
               <Typography color="text.secondary">
@@ -1037,6 +1039,7 @@ export default function GameRoulette() {
             </Box>
           </Box>
         </Box>
+        <Footer />
       </div>
     </ThemeProvider>
   );

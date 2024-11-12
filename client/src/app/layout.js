@@ -11,7 +11,7 @@ import toast, { Toaster } from 'react-hot-toast';
 
 
 const metadata = {
-  title: "APT-Casino",
+  title: "RoochCasino",
   description: "Web3 gaming arena",
 };
 

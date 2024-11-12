@@ -9,6 +9,10 @@ import { Aptos, AptosConfig, Network } from "@aptos-labs/ts-sdk";
 import { useWallet } from "@aptos-labs/wallet-adapter-react";
 import { toast } from "react-hot-toast";
 import { getPortfolio,authenticate } from "@/services/okto";
+import FeatureGameSection from "@/components/FeatureGameSection";
+import Footer from '@/components/Footer'
+
+
 export default function Page() {
   const config = new AptosConfig({ network: Network.DEVNET });
   const aptosClient = new Aptos(config);
@@ -75,7 +79,7 @@ export default function Page() {
                   <span className="flex items-center mb-5 gap-1">
                     <p className="font-medium text-3xl">0</p>
                     <p className="text-sm font-sans opacity-50 flex self-end">
-                      Aptos Testnet
+                      (Rooch Testnet)
                     </p>
                   </span>
                   <div>
@@ -103,7 +107,7 @@ export default function Page() {
                   <span className="flex items-center mb-5 gap-1">
                     <p className="font-medium text-3xl">0</p>
                     <p className="text-sm font-sans opacity-50 flex self-end">
-                      (Sepolia Testnet)
+                      (Aptos Testnet)
                     </p>
                   </span>
                   <div>
@@ -139,9 +143,9 @@ export default function Page() {
               <tbody className="bg-dark-pink">
                 <tr className="col-span-full h-0.5 w-full"></tr>
                 <tr className="">
-                  <td className="flex py-4 gap-3 pl-10">Aptos Testnet</td>
+                  <td className="flex py-4 gap-3 pl-10">Rooch Testnet</td>
                   <td className="px-5">$7.9</td>
-                  <td>8.2 APT</td>
+                  <td>8.2 APTC</td>
                   <td className="px-5">1.94%</td>
                   <td className="flex items-center  justify-center gap-5">
                     <GradientBorderButton>Withdraw</GradientBorderButton>
@@ -149,9 +153,9 @@ export default function Page() {
                   </td>
                 </tr>
                 <tr className="py-4">
-                  <td className="flex py-4 gap-3 pl-10">Aptos Testnet</td>
+                  <td className="flex py-4 gap-3 pl-10">Rooch Testnet</td>
                   <td className="px-5">$7.9</td>
-                  <td>8.2 APT</td>
+                  <td>8.2 APTC</td>
                   <td className="px-5">1.94%</td>
                   <td className="flex items-center justify-center gap-5">
                     <GradientBorderButton>Withdraw</GradientBorderButton>
@@ -159,9 +163,9 @@ export default function Page() {
                   </td>
                 </tr>
                 <tr className="py-4">
-                  <td className="flex py-4 gap-3 pl-10">Aptos Testnet</td>
+                  <td className="flex py-4 gap-3 pl-10">Rooch Testnet</td>
                   <td className="px-5">$7.9</td>
-                  <td>8.2 APT</td>
+                  <td>8.2 APTC</td>
                   <td className="px-5">1.94%</td>
                   <td className="flex items-center py-4 justify-center gap-5">
                     <GradientBorderButton>Withdraw</GradientBorderButton>
@@ -172,6 +176,7 @@ export default function Page() {
             </table>
           </div>
         </Container>
+        <Footer />
       </div>
     </>
   );
