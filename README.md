@@ -59,8 +59,7 @@ The traditional online gambling industry is plagued by several issues, including
 
 ![APT-Casino - Analog pptx (7)](https://github.com/user-attachments/assets/dff51e16-ceed-44da-b27d-2d925b4d62e0)
 
-
-![captures_chrome-capture-2024-5-16 (7)](https://github.com/user-attachments/assets/c0b31be6-cda8-45aa-bc82-86b6121c917f)
+![Screenshot 2024-11-12 120745](https://github.com/user-attachments/assets/b462d3e3-fbf6-4943-8cd8-732d29800f13)
 
 
 ### Our Sources of Revenue
